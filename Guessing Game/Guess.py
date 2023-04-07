@@ -1,17 +1,19 @@
 import random
+a=0
+print("Guess a number within 1 and 100")
+print("You have only 3 chances")
+x = random.randrange(1,100)
+while(a<3):
+    n = int(input("Enter your selection: "))
 
-def guess_number(num1):
-    num=random.randrange(1,50)
-    if num==num1:
-        print("WINNER")
+    if n==x:
+        print("You Won")
+        break
     else:
-        print("TRY AGAIN")
-        start()
-
-print("Welcome to Number Guessing Game")       
-
-def start():
-    number=int(input("enter a number btn 1 and 50: "))
-    guess_number(number)
-
-start()
+        a+=1
+        print(x)
+        print("You Failed")
+        print("You have only ",3-a," attempts left")
+        
+if a==3:
+        print("GAME OVER")       
